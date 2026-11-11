@@ -93,7 +93,7 @@ function render() {
   const linkedMine = mine.reduce((a, x) => a + x.linked, 0);
   const linkedTheirs = theirs.reduce((a, x) => a + x.linked, 0);
   $('weekBars').innerHTML = mine.slice(-7).map(x =>
-    `<div class="wb" title="${dayLabel(x.r.vanish.t)} ${clock(x.r.vanish.t)}: observer confidence ${pct(x.pTrue)}"><div class="bar ${x.linked >= 0.5 ? 'bad' : ''}" style="height:${Math.max(3, x.pTrue * 64)}px"></div><span>${wk(x.r.vanish.t)[0]}</span></div>`).join('');
+    `<div class="wb" title="${dayLabel(x.r.vanish.t)} ${clock(x.r.vanish.t)}: observer confidence ${pct(x.pTrue)}"><div class="bar ${x.linked >= 0.5 ? 'bad' : ''}" style="height:${Math.max(3, x.pTrue * 46)}px"></div><span>${wk(x.r.vanish.t)[0]}</span></div>`).join('');
   $('linkedBig').textContent = `${Math.round(linkedMine)} of ${mine.length} linked`;
   $('linkedVs').textContent = `${state.policy === 'smart' ? 'Every 24 hours' : 'Smart'}: ${Math.round(linkedTheirs)} of ${theirs.length}`;
 
@@ -158,6 +158,11 @@ async function boot() {
   $('rotateNow').addEventListener('click', () => { $('sheet').hidden = false; });
   $('sheetWait').addEventListener('click', () => { $('sheet').hidden = true; });
   $('sheetAnyway').addEventListener('click', () => { $('sheet').hidden = true; });
+  // deep links for sharing a specific view: ?policy=fixed&offline=strong&sheet=1
+  const q = new URLSearchParams(location.search);
+  if (q.get('policy') === 'fixed') state.policy = 'fixed';
+  if (SILENCE[q.get('offline')]) state.silence = q.get('offline');
   render();
+  if (q.get('sheet') === '1') $('sheet').hidden = false;
 }
 boot();
