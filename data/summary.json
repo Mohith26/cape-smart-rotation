@@ -1,0 +1,94 @@
+{
+  "seed": 20261110,
+  "users": 600,
+  "days": 14,
+  "presets": {
+    "short": {
+      "silence": [
+        2,
+        6
+      ],
+      "fixed": {
+        "rotations": 4185,
+        "linkRate": 0.9836,
+        "meanConfidence": 0.9822,
+        "medianLookalikes": 1,
+        "extraOfflineMin": 0.73,
+        "byKind": {
+          "scheduled": 4051,
+          "outage": 134
+        }
+      },
+      "smart": {
+        "rotations": 3927,
+        "linkRate": 0.6808,
+        "meanConfidence": 0.6082,
+        "medianLookalikes": 2.1,
+        "extraOfflineMin": 6.44,
+        "byKind": {
+          "deadline": 1440,
+          "outage": 673,
+          "move": 1814
+        }
+      }
+    },
+    "balanced": {
+      "silence": [
+        4,
+        12
+      ],
+      "fixed": {
+        "rotations": 4185,
+        "linkRate": 0.9836,
+        "meanConfidence": 0.9822,
+        "medianLookalikes": 1,
+        "extraOfflineMin": 0.73,
+        "byKind": {
+          "scheduled": 4051,
+          "outage": 134
+        }
+      },
+      "smart": {
+        "rotations": 4081,
+        "linkRate": 0.4073,
+        "meanConfidence": 0.3066,
+        "medianLookalikes": 7.14,
+        "extraOfflineMin": 7.94,
+        "byKind": {
+          "deadline": 761,
+          "outage": 591,
+          "move": 2729
+        }
+      }
+    },
+    "strong": {
+      "silence": [
+        8,
+        20
+      ],
+      "fixed": {
+        "rotations": 4185,
+        "linkRate": 0.9836,
+        "meanConfidence": 0.9822,
+        "medianLookalikes": 1,
+        "extraOfflineMin": 0.73,
+        "byKind": {
+          "scheduled": 4051,
+          "outage": 134
+        }
+      },
+      "smart": {
+        "rotations": 4106,
+        "linkRate": 0.2786,
+        "meanConfidence": 0.1862,
+        "medianLookalikes": 15.8,
+        "extraOfflineMin": 11.8,
+        "byKind": {
+          "deadline": 659,
+          "outage": 560,
+          "move": 2887
+        }
+      }
+    }
+  }
+}
